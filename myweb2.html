@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Click Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        video {
+            width: 80%; /* Video width */
+            max-width: 600px; /* Max video width */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px;
+        }
+        .button-container {
+            text-align: center;
+        }
+        img {
+            width: 100px; /* Button image size */
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+        p {
+            margin-top: 10px; /* Margin for text */
+            font-size: 18px;
+        }
+        .counter {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Video Element -->
+    <video id="myVideo" controls>
+        <source src="cuneyd_su.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Button and Text -->
+    <div class="button-container">
+        <img src="button.jpg" alt="Play Video" onclick="playVideo()">
+        <p>Sen de Cüneyd'e kova dolusu su fırlatmak için kovaya tıkla!</p>
+    </div>
+
+    <!-- Counter Display -->
+    <div class="counter" id="clickCounter">
+        Button clicked: 0 times
+    </div>
+
+    <script>
+        // Initialize the counter
+        let clickCount = 0;
+
+        // Function to play the video and update the counter
+        function playVideo() {
+            const video = document.getElementById("myVideo");
+            const counterDisplay = document.getElementById("clickCounter");
+
+            // Play the video
+            video.currentTime = 0; // Reset to the beginning
+            video.play();
+
+            // Increment the counter and update the display
+            clickCount++;
+            counterDisplay.textContent = `Button clicked: ${clickCount} times`;
+        }
+    </script>
+
+</body>
+</html>
