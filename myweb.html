@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Görüntüleme Web Sitesi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        video {
+            width: 80%; /* Videonun genişliğini yüzdeye göre ayarlayın */
+            max-width: 600px; /* Videonun maksimum genişliğini sınırlayın */
+            height: auto; /* En-boy oranını korumak için */
+            margin-bottom: 20px; /* Videonun altına boşluk bırakın */
+        }
+        .button-container {
+            text-align: center; /* Ortalamak için */
+        }
+        img {
+            width: 100px; /* Resmin genişliği */
+            cursor: pointer;
+            display: block; /* Resmi blok halinde gösterin */
+            margin: 0 auto; /* Ortalamak için */
+        }
+        p {
+            margin-top: 10px; /* Yazının yukarıdan boşluğu */
+            font-size: 18px; /* Yazı boyutu */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Video Elemanı -->
+    <video id="myVideo" controls>
+        <source src="cuneyd_su.mp4" type="video/mp4">
+        Tarayıcınız video oynatmayı desteklemiyor.
+    </video>
+
+    <!-- Buton ve Yazı -->
+    <div class="button-container">
+        <img src="button.jpg" alt="Sen de Cüneyd'e kova dolusu su fırlatmak için kovaya tıkla!" onclick="playVideo()">
+        <p>Sen de Cüneyd'e kova dolusu su fırlatmak için kovaya tıkla!</p>
+    </div>
+
+    <script>
+        function playVideo() {
+            const video = document.getElementById("myVideo");
+            video.currentTime = 0; // Videoyu başa sar
+            video.play(); // Videoyu oynat
+        }
+    </script>
+
+</body>
+</html>
